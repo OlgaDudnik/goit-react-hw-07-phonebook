@@ -9,7 +9,7 @@ import {
 const Form = () => {
   const { data } = useGetContactsQuery();
   const [name, setName] = useState('');
-  const [phone, setNumber] = useState('');
+  const [number, setNumber] = useState('');
   const [addContact] = useAddContactMutation();
 
   const id = shortid();
@@ -31,7 +31,7 @@ const Form = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const values = { name, phone, id };
+    const values = { name, number, id };
     setName('');
     setNumber('');
 
@@ -66,7 +66,7 @@ const Form = () => {
         <input
           className={styles.Input}
           type="tel"
-          value={phone}
+          value={number}
           onChange={handleChange}
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"

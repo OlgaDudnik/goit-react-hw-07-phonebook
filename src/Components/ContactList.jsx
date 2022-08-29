@@ -27,9 +27,9 @@ const Contacts = () => {
       <Filter value={filter} onFilter={setFilter} />
       <ul className={styles.List}>
         {contactList &&
-          contactList?.map(({ id, name, phone }) => (
+          contactList?.map(({ id, name, number }) => (
             <li key={id} className={styles.ListItem}>
-              {name}: {phone}
+              {name}: {number}
               <button
                 className={styles.BtnDelate}
                 onClick={() => deleteContact(id)}
