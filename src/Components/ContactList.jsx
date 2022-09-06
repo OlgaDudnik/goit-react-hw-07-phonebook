@@ -4,8 +4,7 @@ import {
   useGetContactsQuery,
   useDeleteContactMutation,
 } from '../redux/contactsSlice';
-import Filter from './Filter';
-import styles from '../Styles/styles.module.css';
+import { Filter } from './Filter';
 
 const Contacts = () => {
   const { data } = useGetContactsQuery();
@@ -25,17 +24,12 @@ const Contacts = () => {
   return (
     <>
       <Filter value={filter} onFilter={setFilter} />
-      <ul className={styles.List}>
+      <ul>
         {contactList &&
           contactList?.map(({ id, name, number }) => (
-            <li key={id} className={styles.ListItem}>
+            <li key={id}>
               {name}: {number}
-              <button
-                className={styles.BtnDelate}
-                onClick={() => deleteContact(id)}
-              >
-                Delete
-              </button>
+              <button onClick={() => deleteContact(id)}>Delete</button>
             </li>
           ))}
       </ul>

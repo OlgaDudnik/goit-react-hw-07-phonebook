@@ -1,12 +1,10 @@
 import React from 'react';
-import styles from '../Styles/styles.module.css';
 
-const Filter = ({ value, onFilter }) => {
+export const Filter = ({ value, onFilter }) => {
   return (
-    <label className={styles.Label}>
+    <label>
       Find contacts by name
       <input
-        className={styles.Input}
         type="text"
         value={value}
         onChange={e => onFilter(e.currentTarget.value)}
@@ -14,5 +12,3 @@ const Filter = ({ value, onFilter }) => {
     </label>
   );
 };
-
-export default Filter;
